@@ -1,12 +1,13 @@
+from typing import Optional
 from pydantic import BaseModel
 
 
 class PlayerResponse(BaseModel):
     steam_id: int
     display_name: str
-    avatar_url: str | None = None
-    rank: int | None = None
-    rank_tier: int | None = None
+    avatar_url: Optional[str] = None
+    rank: Optional[int] = None
+    rank_tier: Optional[int] = None
 
 
 class PlayerMatchResponse(BaseModel):

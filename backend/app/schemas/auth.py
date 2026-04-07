@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel, EmailStr
 
 
@@ -23,4 +24,4 @@ class LoginResponse(BaseModel):
 
 class TokenData(BaseModel):
     account_id: str
-    steam_id: int | None = None
+    steam_id: Optional[int] = None
