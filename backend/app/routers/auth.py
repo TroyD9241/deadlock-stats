@@ -9,7 +9,7 @@ from app.schemas.auth import (
 )
 from app.models.account import Account
 from app.auth import hash_password, verify_password, create_access_token
-import secrets
+from uuid import uuid4
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
@@ -23,7 +23,7 @@ def register(req: RegisterRequest, db: Session = Depends(get_db)):
         )
 
     account = Account(
-        account_id=secrets.uuid4(),
+        account_id=str(uuid4()),
         email=req.email,
         password_hash=hash_password(req.password),
     )
