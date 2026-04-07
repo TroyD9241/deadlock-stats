@@ -18,4 +18,4 @@ node_modules/
 specs/
 
 # OS
-.DS_Store
+.DS_Store.worktrees
